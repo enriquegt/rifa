@@ -1,0 +1,49 @@
+/* Fondo de gradiente para toda la página */
+.background-gradient {
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    /* Puedes cambiarlo a cualquier opción */
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Fondo oscuro para el encabezado */
+.header-background {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+.raffle-subtitle {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    color: #ffd200;
+}
+
+/* Información de Rifa en Tarjetas */
+.info-box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price-info, .raffle-date, .contact-info {
+    font-size: 1.1rem;
+}
+
+.price-info {
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.raffle-date {
+    font-weight: bold;
+    color: #673ab7;
+}
+
+.good-luck {
+    color: #e91e63;
+    font-size: 1.4rem;
+}
+
+/* Resto del estilo permanece igual */
