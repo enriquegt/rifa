@@ -10,6 +10,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .winner-info {
+            background-color: #28a745; /* Verde */
+            color: #ffffff; /* Texto en blanco */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+        }
+        .winner-info h2, .winner-info h3, .winner-info p {
+            color: #ffffff; /* Asegura que todo el texto sea blanco */
+        }
+    </style>
 </head>
 <body class="background-gradient">
     <!-- Header -->
@@ -20,9 +32,14 @@
 
     <div class="container my-5">
         <div class="row">
-            <!-- Imagen de Nintendo Switch -->
+            <!-- Información del Ganador -->
             <div class="col-md-6 text-center">
-                <img src="sw.jpg" alt="Nintendo Switch" class="img-fluid raffle-image rounded shadow">
+                <div class="winner-info p-4 rounded shadow">
+                    <h2 class="text-uppercase font-weight-bold">¡Ganadora!</h2>
+                    <h3>Isabel</h3>
+                    <p class="font-weight-bold">Boleto: 39</p>
+                    <p class="font-italic">¡Muchas gracias a todos por participar!</p>
+                </div>
             </div>
 
             <!-- Tabla de Números -->
@@ -58,7 +75,7 @@
 
         <!-- Contador Regresivo -->
         <div class="countdown-container text-center my-4 p-3 rounded shadow bg-white">
-            <h2>La rifa comienza en:</h2>
+            <h2>La rifa ha Finalizado</h2>
             <div id="countdown" class="countdown text-dark font-weight-bold display-4"></div>
         </div>
 
@@ -91,65 +108,11 @@
         </div>
     </div>
 
-    <!-- Modal para la Información de Pago -->
-    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded shadow">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="paymentModalLabel">Información de Pago</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Realiza una transferencia o depósito al número de tarjeta BBVA: 4815-1630-4352-7558 (Jose Enrique Gonzalez Trejo)<strong></strong></p>
-                    <p>Envía tu comprobante por WhatsApp a:</p>
-                    <ul>
-                        <li><i class="fab fa-whatsapp text-success"></i> José Enrique: <strong>414 109 1702</strong></li>
-                        <li><i class="fab fa-whatsapp text-success"></i> Liz: <strong>646 255 2399</strong></li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Custom Countdown Script -->
-    <script>
-        const countdownElement = document.getElementById("countdown");
-        const raffleDate = new Date("2024-11-28T18:00:00").getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = raffleDate - now;
-
-            if (distance > 0) {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            } else {
-                countdownElement.innerHTML = "¡La rifa ha comenzado!";
-            }
-        }
-
-        setInterval(updateCountdown, 1000);
-
-        // Mostrar el modal con la información de pago
-        function showModal(number) {
-            $('#paymentModal').modal('show');
-        }
-    </script>
 </body>
 </html>
